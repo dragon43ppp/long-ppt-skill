@@ -128,6 +128,8 @@ English note: this repository is Chinese-first and focuses on practical PowerPoi
 - [skills/index.md](./skills/index.md)
 - [decision-matrix.md](./decision-matrix.md)
 - [cases/ai-architecture-to-editable-ppt.md](./cases/ai-architecture-to-editable-ppt.md)
+- `D:\Projects\southwest_pipeline_colasoft\output\电力可观测性架构图_可编辑重建版_v1.pptx`
+- `D:\Projects\southwest_pipeline_colasoft\output\preview_power_observability_editable_v1`
 
 这个案例体现了 Long-ppt 的一个很重要的原则：
 
