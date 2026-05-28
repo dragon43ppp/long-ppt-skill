@@ -1,21 +1,34 @@
 ---
 name: long-ppt-core
-description: Long-ppt 总控工作流 skill。负责判断 PPT 页面应该走图片优先、Hybrid 重建、python-pptx 原生对象重建，还是 VBA 原生重建路线。适合需要统一调度整套 PPT 生产过程的场景。
+description: Long-ppt 总控工作流 skill。负责基于现有材料理解内容、提炼页面结构，并判断 PPT 页面应该走图片优先、Hybrid 重建、python-pptx 原生对象重建，还是 VBA 原生重建路线。适合需要统一调度整套 PPT 生产过程的场景。
 ---
 
 # long-ppt-core
 
 `long-ppt-core` 是 `Long-ppt skill` 体系里的总控 skill。
 
-它不负责只做一种事情，而是负责判断一页 PPT 最适合走哪条路线，并把整套生产流程串起来。
+它不只负责判断技术路线，更重要的是先基于现有材料理解内容、提炼结构，再决定一页 PPT 最适合走哪条路线，并把整套生产流程串起来。
 
 ## 主要职责
 
+- 基于现有材料提炼页面结构
 - 用中文自然讨论页面目标
 - 判断页面是否需要先重设计
 - 判断页面适合截图保留还是原生重建
 - 在 `long-ppt-image`、`long-ppt-hybrid`、`long-ppt-native`、`long-ppt-vba` 之间选最合适路线
 - 以最终可交付 PPT 为目标，而不是只给建议
+
+## 结构提炼是什么意思
+
+在 Long-ppt 里，很多页面不会直接开始画，而是先做一层结构整理：
+
+- 这页真正的标题是什么
+- 哪些内容是主信息
+- 哪些内容是说明文字
+- 哪些区域是应该保留的视觉部分
+- 哪些区域应该重构为原生对象
+
+这一步做得对，后面的 Hybrid、python-pptx、VBA 才会顺。
 
 ## 默认判断顺序
 
