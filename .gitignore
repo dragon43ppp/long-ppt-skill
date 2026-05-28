@@ -1,0 +1,12 @@
+*.tmp
+*.log
+*.pptx
+*.pptm
+*.png
+*.jpg
+*.jpeg
+*.webp
+node_modules/
+dist/
+build/
+.env
