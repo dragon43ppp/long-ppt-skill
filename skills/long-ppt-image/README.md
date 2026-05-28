@@ -1,17 +1,52 @@
 # long-ppt-image
 
-`long-ppt-image` 专门处理 PPT 的图片生成和视觉底板问题。
+`long-ppt-image` 是 `Long-ppt skill` 里的图片与视觉底板路线。
 
-它和 `openai-image2-production` 是天然可组合的：
+它负责的不是整套 PPT 交付，而是先把页面的视觉基础打出来，为后续回填、重建或混合编辑做准备。
 
-- `long-ppt-image` 负责 PPT 视角下的出图目标
-- `openai-image2-production` 负责 GPT Image 2 的项目化执行
-
-适合：
+## 最适合它的页面
 
 - 封面
 - 大标题页
+- 章节过渡页
 - 背景页
-- 结构化底图
+- 结构示意图
+- 替代真实项目图的架构示意页
+- AI 先出图再回填 PPT 的页面
 
-它通常不是终点，而是后续 Hybrid / Native / VBA 的前置步骤。
+## 它真正的价值
+
+很多页面的问题不是内容不对，而是视觉底板太弱。
+
+这时候更合理的做法通常不是直接重建 PPT，而是先做一张合适的图：
+
+- 把风格定下来
+- 把结构底板定下来
+- 把留白关系定下来
+- 把回填区域预留出来
+
+## 和 `openai-image2-production` 的关系
+
+这两个是天然可组合的：
+
+- `long-ppt-image`
+  - 站在 PPT 视角定义“需要什么图”
+- `openai-image2-production`
+  - 负责真正执行 `gpt-image-2` 出图
+
+可以理解为：
+
+- `long-ppt-image` 是任务定义层
+- `openai-image2-production` 是图片执行层
+
+## 什么时候优先选它
+
+- 页面视觉本身太弱
+- 需要先出一版氛围图或底板
+- 需要替代真实项目图
+- 需要更漂亮的结构示意图
+- 页面后续还要再走 hybrid / native
+
+## 一句话定位
+
+`long-ppt-image` 是面向封面、底板、结构示意图和 AI 先出图后回填场景的视觉生成能力。
