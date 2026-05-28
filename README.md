@@ -1,6 +1,6 @@
 # Long-ppt skill
 
-中文优先说明。
+中文为主，英文只作为补充说明。
 English note: this repository is Chinese-first and focuses on practical PowerPoint production workflows.
 
 `Long-ppt skill` 是一套面向真实交付场景的 PPT 技能仓库。它不把“生成 PPT”理解成单一步骤，而是把整个过程拆成更贴近实际工作的几层能力：

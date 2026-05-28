@@ -1,22 +1,22 @@
-# Long-ppt Decision Matrix
+# Long-ppt 路线判断矩阵
 
-## Route selection
+## 页面类型与推荐路线
 
-| Page type | Keep visual fidelity first | Need normal editable PPTX | Need macro-driven rebuild | Recommended route |
-|-----------|----------------------------|---------------------------|---------------------------|-------------------|
-| Cover / atmosphere page | Yes | No | No | `long-ppt-image` |
-| Background / backplate | Yes | No | No | `long-ppt-image` |
-| Dashboard screenshot | Yes | Partial | No | `long-ppt-hybrid` |
-| Monitoring big screen | Yes | Partial | No | `long-ppt-hybrid` |
-| Architecture diagram | No | Yes | Optional | `long-ppt-native` |
-| Attachment page | No | Yes | Optional | `long-ppt-native` |
-| Framework page | No | Yes | Optional | `long-ppt-native` |
-| Structured enterprise layout | Maybe | Yes | Optional | `long-ppt-native` |
-| PowerPoint macro workflow page | No | Yes | Yes | `long-ppt-vba` |
+| 页面类型 | 视觉保真优先 | 需要普通可编辑 PPTX | 需要宏驱动 | 推荐路线 |
+|-----------|----------------|----------------------|-------------|-----------|
+| 封面 / 氛围页 | 是 | 否 | 否 | `long-ppt-image` |
+| 背景 / 底板页 | 是 | 否 | 否 | `long-ppt-image` |
+| 仪表盘截图页 | 是 | 部分需要 | 否 | `long-ppt-hybrid` |
+| 监控大屏页 | 是 | 部分需要 | 否 | `long-ppt-hybrid` |
+| 架构图 | 否 | 是 | 可选 | `long-ppt-native` |
+| 附件页 | 否 | 是 | 可选 | `long-ppt-native` |
+| 框架图 | 否 | 是 | 可选 | `long-ppt-native` |
+| 结构化企业方案页 | 视情况 | 是 | 可选 | `long-ppt-native` |
+| PowerPoint 宏工作流页 | 否 | 是 | 是 | `long-ppt-vba` |
 
-## Practical rule
+## 实用判断原则
 
-- If the page is image-heavy, do not force full native reconstruction.
-- If the page is structure-heavy, native reconstruction is usually more valuable.
-- If the page still looks visually weak, redesign before reconstruction.
-- If the user wants future reuse, prefer editable objects over flat screenshots whenever practical.
+- 页面如果是图片密集型，不要强行全原生重建
+- 页面如果是结构密集型，原生重建通常更有价值
+- 页面如果视觉本身不够好，先重做视觉，再考虑重建
+- 如果用户强调后续复用，能做成可编辑对象的部分尽量做成可编辑对象
