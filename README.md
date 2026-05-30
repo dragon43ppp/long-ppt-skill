@@ -34,6 +34,7 @@ English note: this repository is Chinese-first and focuses on practical PowerPoi
 |------|------|------|
 | `long-ppt-core` | 结构优先的总控编排 | 整套 PPT 或多页方案的路线判断 |
 | `long-ppt-image` | 图片与底板生成 | 封面、背景、结构底板、AI 出图页 |
+| `long-ppt-rebuild` | 现有视觉页可编辑重建 | 视觉稿、图片页、截图页、图片版 PPTX 的语义化可编辑重建 |
 | `long-ppt-hybrid` | Hybrid 可编辑重建 | 截图页、监控页、大屏页、仪表盘页 |
 | `long-ppt-native` | `python-pptx` 原生对象重建 | 架构图、附件页、框架页、能力图 |
 | `long-ppt-vba` | VBA 原生重建 | 宏驱动的 PowerPoint 工作流 |
@@ -53,7 +54,8 @@ English note: this repository is Chinese-first and focuses on practical PowerPoi
 1. `long-ppt-core` 判断某页是否需要先出图
 2. `long-ppt-image` 定义这页该生成什么图、保留哪些留白、是否要可回填
 3. `openai-image2-production` 或等价图片链路执行 `gpt-image-2`
-4. 再根据页面类型进入 `hybrid`、`native` 或 `vba` 重建
+4. 如果任务起点是一页现有视觉稿或图片页，可进入 `long-ppt-rebuild`
+5. 再根据页面类型进入 `hybrid`、`native` 或 `vba` 重建
 
 ## Long-ppt 的核心能力分层
 
@@ -88,7 +90,16 @@ English note: this repository is Chinese-first and focuses on practical PowerPoi
 - 仪表盘页
 - 希望保留原视觉，同时把核心文字改成可编辑
 
-### 4. `python-pptx` 原生路线
+### 4. 现有视觉页重建路线
+
+适合：
+
+- 用户给的是一页现成图片
+- 图片版 PPTX
+- 截图页还原
+- 希望把整页视觉稿变回可编辑 PPT
+
+### 5. `python-pptx` 原生路线
 
 适合：
 
@@ -105,7 +116,7 @@ English note: this repository is Chinese-first and focuses on practical PowerPoi
 - 原生对象稳定
 - 方便继续编辑和复用
 
-### 5. VBA 路线
+### 6. VBA 路线
 
 适合：
 
@@ -117,9 +128,10 @@ English note: this repository is Chinese-first and focuses on practical PowerPoi
 
 1. 先看 `long-ppt-core`
 2. 如果页面视觉本身不够好，先看 `long-ppt-image`
-3. 如果页面是截图或大屏，优先看 `long-ppt-hybrid`
-4. 如果页面是结构图或附件页，优先看 `long-ppt-native`
-5. 如果必须走宏自动化，再看 `long-ppt-vba`
+3. 如果给的是现有图片页 / 截图页 / 整页视觉稿，先看 `long-ppt-rebuild`
+4. 如果页面是截图或大屏，优先看 `long-ppt-hybrid`
+5. 如果页面是结构图或附件页，优先看 `long-ppt-native`
+6. 如果必须走宏自动化，再看 `long-ppt-vba`
 
 ## 真实案例
 
@@ -146,6 +158,7 @@ English note: this repository is Chinese-first and focuses on practical PowerPoi
 ```text
 $CODEX_HOME/skills/long-ppt-core
 $CODEX_HOME/skills/long-ppt-image
+$CODEX_HOME/skills/long-ppt-rebuild
 $CODEX_HOME/skills/long-ppt-hybrid
 $CODEX_HOME/skills/long-ppt-native
 $CODEX_HOME/skills/long-ppt-vba
@@ -163,6 +176,7 @@ long-ppt-skill/
 │  ├─ index.md
 │  ├─ long-ppt-core/
 │  ├─ long-ppt-image/
+│  ├─ long-ppt-rebuild/
 │  ├─ long-ppt-hybrid/
 │  ├─ long-ppt-native/
 │  └─ long-ppt-vba/

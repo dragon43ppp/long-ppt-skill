@@ -25,6 +25,7 @@
 ## 3. 按页面类型分流
 
 - 页面需要先加强视觉：`long-ppt-image`
+- 页面起点是一页现成视觉稿 / 图片页：`long-ppt-rebuild`
 - 页面是截图 / 大屏 / 仪表盘：`long-ppt-hybrid`
 - 页面是架构图 / 附件页 / 框架图：`long-ppt-native`
 - 页面依赖宏工作流：`long-ppt-vba`
