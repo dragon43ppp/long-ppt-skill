@@ -4,6 +4,14 @@
 
 `Long-ppt skill` 不是单一脚本，而是一套按页面类型拆开的 PPT 工作流仓库。
 
+## 快速安装
+
+```bash
+git clone https://github.com/dragon43ppp/long-ppt-skill.git
+cd long-ppt-skill
+pip install -r requirements.txt
+```
+
 ## 建议环境
 
 建议本地具备：
