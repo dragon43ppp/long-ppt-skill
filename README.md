@@ -1,10 +1,5 @@
 # Long-ppt skill
 
-中文为主，英文只作为补充说明。  
-English note: this repository is Chinese-first and focuses on practical PowerPoint production workflows.
-
-关键词：PPT、PowerPoint、PPTX、可编辑PPT、图片转PPT、截图转PPT、架构图重建、python-pptx、VBA、PPT重构、Word转PPT、大纲重写、幻灯片重建。
-
 `Long-ppt skill` 是一套面向真实交付场景的 PPT 技能仓库。它不把“生成 PPT”理解成单一步骤，而是把完整流程拆成更接近实际工作的几层能力：
 
 1. 基于现有材料理解内容
