@@ -12,6 +12,16 @@ cd long-ppt-skill
 pip install -r requirements.txt
 ```
 
+## 可直接运行的 Python 示例
+
+```bash
+python scripts/build_power_observability_editable.py
+python scripts/build_attached_arch_editable.py
+python scripts/build_arch_like_original_editable.py
+```
+
+默认会在仓库下的 `output/` 目录生成示例 PPTX。
+
 ## 建议环境
 
 建议本地具备：
