@@ -1,21 +1,23 @@
 # Long-ppt skill
 
-中文为主，英文只作为补充说明。
+中文为主，英文只作为补充说明。  
 English note: this repository is Chinese-first and focuses on practical PowerPoint production workflows.
 
-`Long-ppt skill` 是一套面向真实交付场景的 PPT 技能仓库。它不把“生成 PPT”理解成单一步骤，而是把整个过程拆成更贴近实际工作的几层能力：
+关键词：PPT、PowerPoint、PPTX、可编辑PPT、图片转PPT、截图转PPT、架构图重建、python-pptx、VBA、PPT重构、Word转PPT、大纲重写、幻灯片重建。
+
+`Long-ppt skill` 是一套面向真实交付场景的 PPT 技能仓库。它不把“生成 PPT”理解成单一步骤，而是把完整流程拆成更接近实际工作的几层能力：
 
 1. 基于现有材料理解内容
 2. 提炼页面结构与信息层级
-3. 为不同页面选择最合适的重建路线
+3. 为不同页面选择更合适的重建路线
 4. 最终交付可编辑、可维护、可复用的 PPT
 
-这套仓库参考了 Baoyu skill 的组织方式：
+这套仓库采用“总仓库 + 多子 skill”的组织方式：
 
 - 一个总仓库
 - 多个子 skill
 - 每个 skill 聚焦一类明确问题
-- 文档优先、复用优先、落地优先
+- 文档优先、复用优先、交付优先
 
 ## 它解决的不是“做一页图”，而是“做成一套能交付的 PPT”
 
@@ -26,34 +28,36 @@ English note: this repository is Chinese-first and focuses on practical PowerPoi
 - 这页更适合图片优先，还是原生对象重建
 - 这页是否值得做成可编辑对象，方便后续继续维护
 
-这也是原始 `ppt1` 路线最重要的价值：先做结构判断，再决定执行方式。
+这也是原始 `ppt1` 路线里最重要的价值：先做结构判断，再决定执行方式。
 
 ## 仓库里的 skill
 
 | Skill | 作用 | 适合场景 |
 |------|------|------|
-| `long-ppt-core` | 结构优先的总控编排 | 整套 PPT 或多页方案的路线判断 |
+| `long-ppt-core` | 结构优先的总控编排 | 现有材料总结、Word 改大纲、整套 PPT 路线判断 |
 | `long-ppt-image` | 图片与底板生成 | 封面、背景、结构底板、AI 出图页 |
-| `long-ppt-hybrid` | Hybrid 可编辑重建 | 截图页、监控页、大屏页、仪表盘页 |
-| `long-ppt-native` | `python-pptx` 原生对象重建 | 架构图、附件页、框架页、能力图 |
+| `long-ppt-rebuild` | 现有视觉页可编辑重建 | PNG/JPG 视觉稿、截图页、图片版 PPTX 的可编辑重建 |
+| `long-ppt-hybrid` | Hybrid 可编辑重建 | 大屏页、仪表盘页、监控页、截图保真页 |
+| `long-ppt-native` | `python-pptx` 原生对象重建 | 架构图、附件页、能力图、结构图 |
 | `long-ppt-vba` | VBA 原生重建 | 宏驱动的 PowerPoint 工作流 |
 
-## 与 `openai-image2-production` 的关系
+## 与 `gpt-image-2` 的关系
 
-`Long-ppt` 负责的是 PPT 工作流与页面路线判断。
-`openai-image2-production` 负责的是 GPT Image 2 出图执行层。
+`Long-ppt` 负责的是 PPT 工作流与页面路线判断。  
+`gpt-image-2` 或兼容图片接口负责的是图片生成执行层。
 
 可以这样理解：
 
 - `long-ppt-image` 是 PPT 场景里的图片能力层
-- `openai-image2-production` 是更通用的图片生产执行层
+- 图片接口是更通用的素材生成执行层
 
 真实工作流通常是：
 
 1. `long-ppt-core` 判断某页是否需要先出图
-2. `long-ppt-image` 定义这页该生成什么图、保留哪些留白、是否要可回填
-3. `openai-image2-production` 或等价图片链路执行 `gpt-image-2`
-4. 再根据页面类型进入 `hybrid`、`native` 或 `vba` 重建
+2. `long-ppt-image` 定义这页该生成什么图、保留哪些留白、是否要回填
+3. 图片链路执行出图
+4. 如果任务起点是一页现有视觉稿或图片页，进入 `long-ppt-rebuild`
+5. 再根据页面类型进入 `long-ppt-hybrid`、`long-ppt-native` 或 `long-ppt-vba`
 
 ## Long-ppt 的核心能力分层
 
@@ -88,7 +92,16 @@ English note: this repository is Chinese-first and focuses on practical PowerPoi
 - 仪表盘页
 - 希望保留原视觉，同时把核心文字改成可编辑
 
-### 4. `python-pptx` 原生路线
+### 4. 现有视觉页重建路线
+
+适合：
+
+- 用户给的是一页现成图片
+- 图片版 PPTX
+- 截图页还原
+- 希望把整页视觉稿变回可编辑 PPT
+
+### 5. `python-pptx` 原生路线
 
 适合：
 
@@ -105,7 +118,7 @@ English note: this repository is Chinese-first and focuses on practical PowerPoi
 - 原生对象稳定
 - 方便继续编辑和复用
 
-### 5. VBA 路线
+### 6. VBA 路线
 
 适合：
 
@@ -115,11 +128,13 @@ English note: this repository is Chinese-first and focuses on practical PowerPoi
 
 ## 推荐使用顺序
 
-1. 先看 `long-ppt-core`
-2. 如果页面视觉本身不够好，先看 `long-ppt-image`
-3. 如果页面是截图或大屏，优先看 `long-ppt-hybrid`
-4. 如果页面是结构图或附件页，优先看 `long-ppt-native`
-5. 如果必须走宏自动化，再看 `long-ppt-vba`
+1. 先看 [skills/index.md](./skills/index.md)
+2. 再看 [workflow-overview.md](./workflow-overview.md)
+3. 如果页面视觉本身不够好，优先看 `long-ppt-image`
+4. 如果给的是现有图片页、截图页、整页视觉稿，优先看 `long-ppt-rebuild`
+5. 如果页面是截图、大屏、监控风页面，优先看 `long-ppt-hybrid`
+6. 如果页面是架构图、附件页、结构图，优先看 `long-ppt-native`
+7. 如果必须走宏自动化，再看 `long-ppt-vba`
 
 ## 真实案例
 
@@ -128,12 +143,17 @@ English note: this repository is Chinese-first and focuses on practical PowerPoi
 - [skills/index.md](./skills/index.md)
 - [decision-matrix.md](./decision-matrix.md)
 - [workflow-overview.md](./workflow-overview.md)
+- [quickstart.md](./quickstart.md)
+- [runtime-and-dependencies.md](./runtime-and-dependencies.md)
 - [cases/README.md](./cases/README.md)
-- [cases/ai-architecture-to-editable-ppt.md](./cases/ai-architecture-to-editable-ppt.md)
-- `D:\Projects\southwest_pipeline_colasoft\output\电力可观测性架构图_可编辑重建版_v1.pptx`
-- `D:\Projects\southwest_pipeline_colasoft\output\preview_power_observability_editable_v1`
+- [examples/README.md](./examples/README.md)
+- [AI 架构图转可编辑 PPT 说明](./cases/ai-architecture-to-editable-ppt.md)
+- [电力可观测性架构图可编辑重建版 PPT](./cases/power-observability-native/电力可观测性架构图_可编辑重建版_v1.pptx)
+- [电力可观测性架构图预览 PNG](./cases/power-observability-native/幻灯片1.PNG)
+- [按原版式重建示例 PPT](./cases/ppt2-rebuild-demo/arch_like_original_editable.pptx)
+- [按原版式重建示例参考图](./cases/ppt2-rebuild-demo/unified_ops_arch_gpt_probe.png)
 
-这个案例体现了 Long-ppt 的一个很重要的原则：
+这些案例体现了 Long-ppt 的一个重要原则：
 
 - 不是盲目把图片“反向描出来”
 - 而是先抽象成结构模型
@@ -146,6 +166,7 @@ English note: this repository is Chinese-first and focuses on practical PowerPoi
 ```text
 $CODEX_HOME/skills/long-ppt-core
 $CODEX_HOME/skills/long-ppt-image
+$CODEX_HOME/skills/long-ppt-rebuild
 $CODEX_HOME/skills/long-ppt-hybrid
 $CODEX_HOME/skills/long-ppt-native
 $CODEX_HOME/skills/long-ppt-vba
@@ -157,17 +178,21 @@ $CODEX_HOME/skills/long-ppt-vba
 long-ppt-skill/
 ├─ README.md
 ├─ LICENSE
-├─ .gitignore
 ├─ decision-matrix.md
+├─ workflow-overview.md
+├─ quickstart.md
+├─ runtime-and-dependencies.md
+├─ requirements.txt
 ├─ skills/
 │  ├─ index.md
 │  ├─ long-ppt-core/
 │  ├─ long-ppt-image/
+│  ├─ long-ppt-rebuild/
 │  ├─ long-ppt-hybrid/
 │  ├─ long-ppt-native/
 │  └─ long-ppt-vba/
 ├─ cases/
-└─ scripts/
+└─ examples/
 ```
 
 ## 设计原则
@@ -180,11 +205,9 @@ long-ppt-skill/
 - 后续还能继续维护
 - 生产效率足够高
 
-## 后续建议
+## 后续可继续补强的内容
 
-后续可以继续补：
-
-- `cases/` 真实案例
-- `examples/` 输入输出示例
+- 更多 `cases/` 真实案例
+- 更多 `examples/` 输入输出示例
 - `CHANGELOG.md`
-- 更多可复用脚本与模板
+- 更统一的脚本入口与模板
