@@ -26,6 +26,19 @@
 - 参考图：
   [unified_ops_arch_gpt_probe.png](./ppt2-rebuild-demo/unified_ops_arch_gpt_probe.png)
 
+### 4. 同一张架构图的多路线可编辑重建
+
+这个案例更适合看 `long-ppt-rebuild` 和 `long-ppt-vba` 的边界：
+
+- 案例说明：
+  [多路线架构图重建案例](./multi-route-architecture-rebuild/README.md)
+- Python / `python-pptx` 可编辑版：
+  [arch_like_original_editable.pptx](./multi-route-architecture-rebuild/arch_like_original_editable.pptx)
+- VBA 模块：
+  [architecture_vba_rebuild_v1.bas](./multi-route-architecture-rebuild/architecture_vba_rebuild_v1.bas)
+- 参考图：
+  [unified_ops_arch_gpt_probe.png](./multi-route-architecture-rebuild/unified_ops_arch_gpt_probe.png)
+
 ## 可以怎么理解这些案例
 
 - 现有 PPT + Word 材料重写，属于 `long-ppt-core`
