@@ -154,9 +154,17 @@
 - 而是先抽象成结构模型
 - 再用 PowerPoint 原生对象重建
 
-## 安装方式
+## 安装与使用
 
-把需要的子目录复制到你的 skill 目录，例如：
+1. 拉取仓库并安装基础依赖：
+
+```bash
+git clone https://github.com/dragon43ppp/long-ppt-skill.git
+cd long-ppt-skill
+pip install -r requirements.txt
+```
+
+2. 把需要的子目录复制到你的 skill 目录，例如：
 
 ```text
 $CODEX_HOME/skills/long-ppt-core
@@ -166,6 +174,15 @@ $CODEX_HOME/skills/long-ppt-hybrid
 $CODEX_HOME/skills/long-ppt-native
 $CODEX_HOME/skills/long-ppt-vba
 ```
+
+3. 按页面类型选择对应 skill：
+
+- 现有材料总结、Word 改大纲、整套 PPT 路线判断：`long-ppt-core`
+- 图片页、截图页、视觉稿还原：`long-ppt-rebuild`
+- 大屏页、监控页、仪表盘页：`long-ppt-hybrid`
+- 架构图、附件页、规则明确的结构页：`long-ppt-native`
+- 需要先做底板、封面或视觉页：`long-ppt-image`
+- 必须依赖 Office 宏环境：`long-ppt-vba`
 
 ## 仓库结构
 
@@ -199,10 +216,3 @@ long-ppt-skill/
 - 重要内容可编辑
 - 后续还能继续维护
 - 生产效率足够高
-
-## 后续可继续补强的内容
-
-- 更多 `cases/` 真实案例
-- 更多 `examples/` 输入输出示例
-- `CHANGELOG.md`
-- 更统一的脚本入口与模板
