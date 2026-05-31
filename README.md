@@ -154,6 +154,34 @@
 - 而是先抽象成结构模型
 - 再用 PowerPoint 原生对象重建
 
+## 可直接运行的脚本
+
+拉取仓库后，可以先直接运行这三份 Python 示例脚本：
+
+```bash
+python scripts/build_power_observability_editable.py
+python scripts/build_attached_arch_editable.py
+python scripts/build_arch_like_original_editable.py
+```
+
+默认输出文件：
+
+- `output/power_observability_editable.pptx`
+- `output/attached_architecture_editable.pptx`
+- `output/arch_like_original_editable.pptx`
+
+这三份脚本分别对应：
+
+- `build_power_observability_editable.py`
+  - `long-ppt-native` 路线
+  - 用 `python-pptx` 将架构图重建为可编辑 PPT
+- `build_attached_arch_editable.py`
+  - `long-ppt-native` 路线
+  - 用原生对象重建附件/阶段规划类结构页
+- `build_arch_like_original_editable.py`
+  - `long-ppt-rebuild` 路线
+  - 按原版式思路重建分层架构图页面
+
 ## 安装与使用
 
 1. 拉取仓库并安装基础依赖：
