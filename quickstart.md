@@ -1,12 +1,12 @@
 # Quickstart
 
-## 这套仓库怎么理解
+## 这套仓库怎么开始用
 
-`Long-ppt skill` 不是单一脚本，而是一套按页面类型拆开的工作流仓库。
+`Long-ppt skill` 不是单一脚本，而是一套按页面类型拆开的 PPT 工作流仓库。
 
-## 最低依赖
+## 建议环境
 
-建议本地至少有：
+建议本地具备：
 
 - Python 3.10+
 - PowerShell
@@ -19,22 +19,22 @@
 pip install -r requirements.txt
 ```
 
-## 如果你只想先看真实结果
+## 如果你只想先看结果
 
-直接看：
+直接先看：
 
 - `cases/power-observability-native/`
 - `cases/ppt2-rebuild-demo/`
 
-## 如果你想按页面类型找路线
+## 如果你想按路线理解
 
 1. 先看 `skills/index.md`
 2. 再看 `workflow-overview.md`
-3. 然后根据页面类型进入对应子 skill
+3. 然后根据页面类型进入对应 skill
 
 ## 当前最适合直接复用的路线
 
 - `long-ppt-native`
 - `long-ppt-rebuild`
 
-这两条最接近“已有案例 + 有明确输出 + 可继续工程化”的状态。
+这两条路线目前示例更完整，也更容易直接迁移到自己的 PPT 任务里。
