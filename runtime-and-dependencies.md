@@ -15,6 +15,7 @@
 从当前公开仓库内容看：
 
 - 已公开的辅助脚本里，当前主要是 PowerShell 图片接口探测脚本
+- 已公开的 Python 示例脚本，覆盖 `native` 和 `rebuild` 两类可编辑 PPT 重建
 - 已公开的可安装 skill 文档和案例，覆盖了 `core / image / rebuild / hybrid / native / vba`
 - 已验证的可编辑 PPT 重建案例，并不只是 PowerShell，关键交付路线实际依赖 `Python + python-pptx`
 
