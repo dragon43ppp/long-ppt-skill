@@ -140,10 +140,13 @@ English note: this repository is Chinese-first and focuses on practical PowerPoi
 - [skills/index.md](./skills/index.md)
 - [decision-matrix.md](./decision-matrix.md)
 - [workflow-overview.md](./workflow-overview.md)
+- [runtime-and-dependencies.md](./runtime-and-dependencies.md)
 - [cases/README.md](./cases/README.md)
 - [cases/ai-architecture-to-editable-ppt.md](./cases/ai-architecture-to-editable-ppt.md)
-- `D:\Projects\southwest_pipeline_colasoft\output\电力可观测性架构图_可编辑重建版_v1.pptx`
-- `D:\Projects\southwest_pipeline_colasoft\output\preview_power_observability_editable_v1`
+- [电力可观测性架构图_可编辑重建版_v1.pptx](./cases/power-observability-native/电力可观测性架构图_可编辑重建版_v1.pptx)
+- [电力可观测性架构图预览](./cases/power-observability-native/幻灯片1.PNG)
+- [ppt2 重建示例 PPT](./cases/ppt2-rebuild-demo/arch_like_original_editable.pptx)
+- [ppt2 重建示例参考图](./cases/ppt2-rebuild-demo/unified_ops_arch_gpt_probe.png)
 
 这个案例体现了 Long-ppt 的一个很重要的原则：
 
