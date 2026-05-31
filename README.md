@@ -10,7 +10,7 @@ English note: this repository is Chinese-first and focuses on practical PowerPoi
 3. 为不同页面选择最合适的重建路线
 4. 最终交付可编辑、可维护、可复用的 PPT
 
-这套仓库参考了 Baoyu skill 的组织方式：
+这套仓库采用“总仓库 + 多子 skill”的组织方式：
 
 - 一个总仓库
 - 多个子 skill
@@ -140,8 +140,10 @@ English note: this repository is Chinese-first and focuses on practical PowerPoi
 - [skills/index.md](./skills/index.md)
 - [decision-matrix.md](./decision-matrix.md)
 - [workflow-overview.md](./workflow-overview.md)
+- [quickstart.md](./quickstart.md)
 - [runtime-and-dependencies.md](./runtime-and-dependencies.md)
 - [cases/README.md](./cases/README.md)
+- [examples/README.md](./examples/README.md)
 - [cases/ai-architecture-to-editable-ppt.md](./cases/ai-architecture-to-editable-ppt.md)
 - [电力可观测性架构图_可编辑重建版_v1.pptx](./cases/power-observability-native/电力可观测性架构图_可编辑重建版_v1.pptx)
 - [电力可观测性架构图预览](./cases/power-observability-native/幻灯片1.PNG)
